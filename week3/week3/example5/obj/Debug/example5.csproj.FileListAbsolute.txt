@@ -1,0 +1,7 @@
+C:\Users\User\Desktop\pp2\week3\week3\example5\bin\Debug\example5.exe.config
+C:\Users\User\Desktop\pp2\week3\week3\example5\bin\Debug\example5.exe
+C:\Users\User\Desktop\pp2\week3\week3\example5\bin\Debug\example5.pdb
+C:\Users\User\Desktop\pp2\week3\week3\example5\obj\Debug\example5.csprojAssemblyReference.cache
+C:\Users\User\Desktop\pp2\week3\week3\example5\obj\Debug\example5.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\pp2\week3\week3\example5\obj\Debug\example5.exe
+C:\Users\User\Desktop\pp2\week3\week3\example5\obj\Debug\example5.pdb
