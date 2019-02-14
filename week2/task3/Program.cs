@@ -9,57 +9,39 @@ namespace task3
 {
     class Program
     {
-        
-        static void GetSubs (FileSystemInfo fil)
+        static string Otstup(int a) // метод для генерации пробелов
         {
-            DirectoryInfo dir = new DirectoryInfo(fil.FullName);
-            FileSystemInfo[] subs = dir.GetFileSystemInfos();
-            foreach (var sub in subs)
+            string s = "      ";
+            string p = "";
+            for (int i = 0; i < a; i++)
             {
-                //Console.Write("         ");
-                Console.WriteLine("{0}", sub.Name);
-
-                /*
-                if (sub.GetType() == typeof(DirectoryInfo))
-                {
-                    Console.Write("             ");
-                    GetSubs(sub);
-                }
-                */
-                }
+                p += s;
+            }
+            return p;
         }
-        
+        static void info(DirectoryInfo dir, int a) // вывод содержания папок
+        {
+            FileInfo[] files = dir.GetFiles();
+            DirectoryInfo[] dires = dir.GetDirectories();
+            foreach (FileInfo file in files) //ьл
+            {
+
+                Console.Write(Otstup(a));
+                Console.WriteLine(file.Name);
+            }
+            foreach (DirectoryInfo dire in dires) // вывод названия папок с определенным расстоянием
+            {
+                Console.Write(Otstup(a)); // объявляем метод Space
+                Console.WriteLine(dire.Name);
+                info(dire, a + 1);
+            }
+        }
+
         static void Main(string[] args)
         {
-            string path = @"C:\Users\User\Desktop\pp2";
-            DirectoryInfo dirs = new DirectoryInfo(path);
-            FileSystemInfo[] files = dirs.GetFileSystemInfos();
-
-            foreach (var fil in files)
-            {
-                Console.WriteLine(fil.Name);
-                if (fil.GetType() == typeof(DirectoryInfo))
-                {
-                    Console.ForegroundColor = ConsoleColor.Green;
-                    GetSubs(fil);
-                    /*
-                    DirectoryInfo dir = new DirectoryInfo(fil.FullName);
-                    FileSystemInfo[] subs = dir.GetFileSystemInfos();
-                    foreach (var sub in subs)
-                    {
-                        Console.WriteLine("     {0}", sub);
-                    }
-                    */
-                }
-                else if (fil.GetType() == typeof(FileInfo))
-                    Console.ForegroundColor = ConsoleColor.Black;
-                
-            }
+            DirectoryInfo dir = new DirectoryInfo(@"C:\IDE");
+            info(dir, 0);
             
-            
-
-
-
         }
     }
 }

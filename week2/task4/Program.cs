@@ -11,27 +11,17 @@ namespace task4
     {
         static void Main(string[] args)
         {
-            string path = @"C:\Users\User\Desktop\pp2";
-            string path1 = @"C:\Users\User\Desktop\example";
+            string path = @"C:\Users\User\Desktop\pp2\atd.txt";
+            //string path1 = @"C:\Users\User\Desktop\pp2";
 
-            Cre
-            /*
-            DirectoryInfo dirs = new DirectoryInfo(path);
+            string path2 = @"C:\Users\User\Desktop\example.txt";
 
-
+            FileStream fs = File.Create(path);
+            File.Move(path, path2);
             
-            DirectoryInfo[] dir = dirs.GetDirectories();
 
-            FileInfo[] files = dirs.GetFiles();
-
-            foreach (FileInfo file in files)
-            {
-                string temppath = Path.Combine(path1, file.Name);
-                file.CopyTo(temppath, false);
-            }
-
-            */
         }
+
         
     }
 }
